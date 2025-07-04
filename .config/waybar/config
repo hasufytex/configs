@@ -1,0 +1,88 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 36,
+  "margin-right": 5,
+  "margin-left": 5,
+
+  "modules-left": [
+    "clock"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "temperature",
+    "network",
+    "hyprland/language"
+  ],
+
+  "clock": {
+    "timezone": "Europe/Sofia",
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %e %Y}",
+    "tooltip": true,
+    "on-click": ""
+  },
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true,
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4]
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "on-click": "pavucontrol",    
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "tooltip": true,
+    "tooltip-format": "{icon} at {volume}%"
+  },
+
+  "temperature": {
+    "thermal-zone": 1,
+    "format": "",
+    "format-alt-click": "click-right",
+    "format-alt": " {temperatureC}°C",
+    "critical-threshold": 70,
+    "format-critical": " {temperatureC}°C"
+  },
+
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": " ",
+    "format-ethernet": " ",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "on-click": "hyprctl switchxkblayout razer-razer-blackwidow-v3-mini next",
+    "format-en": "EN",
+    "format-bg": "BG"
+  }
+}
